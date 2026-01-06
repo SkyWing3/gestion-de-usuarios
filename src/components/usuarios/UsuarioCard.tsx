@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import type { UsuarioResponse } from "../../types/response/usuario.response"
+import { useUsuariosStore } from "../../state/user.store";
 
 interface UsuarioDetalleProps {
     usuario: UsuarioResponse;
@@ -8,10 +9,15 @@ interface UsuarioDetalleProps {
 export const UsuarioCard = ({usuario}: UsuarioDetalleProps) => {
 
     const navigate = useNavigate();
+    const {setUsuarioSelected} = useUsuariosStore();
 
+    const onSubmit = () => {
+        setUsuarioSelected(usuario);
+        navigate("/usuarios/detalle");
+    }
     return (
         <>
-            <div className="" onClick={() => navigate("/usuarios/detalle")}>
+            <div className="" onClick={onSubmit}>
                 <label>{usuario.nombre}</label>
                 <div>
                     <label>{usuario.correo}</label>

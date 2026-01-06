@@ -16,7 +16,7 @@ export class UsuarioService {
 
     }
 
-    public static async actualizarUsuario(UsuarioRequest: UsuarioRequest): Promise<UsuarioResponse> {
+    public static async actualizarUsuario(id: number, UsuarioRequest: UsuarioRequest): Promise<UsuarioResponse> {
 
     }
 

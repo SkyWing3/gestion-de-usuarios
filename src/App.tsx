@@ -13,7 +13,6 @@ function App() {
           <Route path='/' element={<HomePage />}/>
           <Route path='/usuarios' element={<UsuariosPage />}/>
           <Route path='/usuarios/detalle' element={<UsuarioDetallePage />}/>
-          <Route />
         </Routes>
       </BrowserRouter>
     </>
